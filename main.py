@@ -103,7 +103,7 @@ https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
 
 
 
-##listas 
+##listas
 ####acceder y modificar elemntos
 # frutas=["🍎","🍒","🍍"]
 # print(frutas)
@@ -375,7 +375,7 @@ Ejercicio 1: Representa una lista de contactos donde la clave sea el nombre y el
 # print(numeros)
 
 # #ejercicio 2
-# A = {1,2,3} 
+# A = {1,2,3}
 # B = {3,4}
 
 # print(A.union(B))
@@ -389,7 +389,7 @@ Ejercicio 1: Representa una lista de contactos donde la clave sea el nombre y el
 # print(unicos)
 # # # #emd:estrcutura de datos
 
-# Start: Funciones 
+# Start: Funciones
 # def saludar(nombre):
 #     """imprimir un saludo personalizado"""
 #     print(f"Hola, {nombre}")
@@ -432,3 +432,103 @@ Ejercicio 1: Representa una lista de contactos donde la clave sea el nombre y el
 
 #diferencie entre print y return: print solo muestra cosas, return devuelve las cosas
 #end fucniones
+
+# funciones como objetos de prime clase:
+###asignar a una variable
+#def cuadrado(x):
+#   return x * x
+
+###pasar la funcion como argumento
+# def cuadrado(x):
+#     return x * x
+
+# def aplica_funcion(func, valor):
+#     return func(valor)
+
+# resultado = aplica_funcion(func=cuadrado, valor=6)
+#print(resultado)
+
+# ####Devolver funcion desde otra:
+# def generador_de_saludo(saludo):
+#     def saludar(nombre):
+#         print(saludo,nombre)
+#     return saludar
+
+# "f_hola"= generador_desaludo
+
+
+# #####uso con funciones integradas (incorporadas):
+
+# def cuadrado(x):
+#     return x * x
+
+# tupla=(1,2,3,4)
+# tupla_cuadrado=tuple(map(cuadrado, tupla)) #el map sirve como un for
+# print(tupla,tupla_cuadrado)
+
+# #============Bonus Funciones lambda:========================
+# #La sintaxis de una función lambda:
+# # lambda argumentos: expresión
+# # argumentos → Son los valores que recibe la función.
+# # expresión → Es la operación que se realiza con los argumentos y el resultado que se devuelve.
+
+# # En lugar de definir una función tradicional como esta:
+# def suma_dos(x):
+#     return x + 2
+
+# print(suma_dos(5)) # Salida: 7
+
+# # Puedes hacer lo mismo con una función lambda:
+# suma_dos_lambda = lambda x: x + 2
+# print(suma_dos_lambda(5)) # Salida: 7
+
+
+
+##Argumentos *args y **kwargs:
+# def ejemplo(*args, **kwargs): #(se puede nombrr como sea, con tal que tengan los astericos)
+#     print("args: ", args) # tupla con argumentos posicionales
+#     print("kwargs: ", kwargs) # #Diccionaro con agrumento snombrados
+
+#ejemplo(1,2,3,nombre="juan",edad=25)
+
+# def suma_todos(*numeros):
+#     total=0
+#     for n in numeros:
+#         total += n
+#     return total
+
+# print(suma_todos(1,2,3,4,5))
+
+# #Ejmplo 2
+# def mostrar_info(**info):
+#     for clave, valor in info.items():
+#         print(clave, '->', valor)
+# mostrar_info(nombre= "Ana", edad=25, ciudad="lima")
+# # clave, valor = (nombre, "Ana", edad=25, ciudad="lima")
+
+
+# #### Bonus: Desempaqutando estructura de datos:
+# def output_info(**info):
+#     for clave, valor in info.items():
+#         print(f"{clave}: {valor}")
+
+# info = {"nombre":"juan", "curso": "python", "año":2025}
+# print(info)
+# output_info(**info)
+# #Desempaquetado de listas, tuplas y sets
+# numeros = [100, 500, 300]
+# numeros_tuplas = (100, 500, 300)
+# numeros_sets = {100, 500, 300}
+# print(numeros, *numeros)
+# print(numeros_tuplas, *numeros_tuplas)
+# print(numeros_sets, *numeros_sets)
+
+
+# # Desempaquetado de diccionarios
+# def output_info(**info):
+#     for clave, valor in info.items():
+#         print(f'{clave}: {valor}')
+
+# info = {"nombre": "Juan", "curso": "Python", "año": 2025}
+# print(info)
+# output_info(**info)
